@@ -42,9 +42,9 @@ Each project loads its own `style.css` and `script.js` from the same folder usin
 
 1. In your editor, use **Find** (Ctrl+F) and search for `PLACEHOLDER` across the `portfolio` folder.
 2. Replace each label with accurate information, for example:
-   - `PLACEHOLDER: Person's name` → the person's real name
-   - `PLACEHOLDER: Short introduction` → one honest intro sentence
-   - `PLACEHOLDER: About information` → about section text
+   - `PLACEHOLDER: Person's name` → Fritha
+   - `PLACEHOLDER: Short introduction` → Student in JECRC
+   - `PLACEHOLDER: About information` → B-tech cse
    - `PLACEHOLDER: Skill` → real skills (add or remove `<li>` items as needed)
    - `PLACEHOLDER: Project title` / `PLACEHOLDER: Project description` → real project names and descriptions
 3. Update `portfolio/page-audit.md` so the **True?** column reflects what is now verified.
