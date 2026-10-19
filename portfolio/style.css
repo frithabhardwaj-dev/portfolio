@@ -1,0 +1,267 @@
+/* Light theme (default) */
+:root {
+  --blue-deep: #0b1f3a;
+  --blue-mid: #1e4d8c;
+  --blue-light: #e8f0fa;
+  --gold: #c9a227;
+  --gold-soft: #f5ecd4;
+  --white: #ffffff;
+  --text: #10243f;
+  --text-muted: #3d5270;
+  --border: #c5d4e8;
+  --shadow: rgba(11, 31, 58, 0.12);
+  --focus-ring: #c9a227;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  a:hover {
+    transform: none;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--blue-light);
+  min-height: 100vh;
+}
+
+.site-header {
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+  color: var(--white);
+  padding: 1rem 1.25rem;
+  border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-tagline {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+#themeToggle {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  padding: 0.55rem 1rem;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  background-color: var(--white);
+  color: var(--blue-deep);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#themeToggle:hover {
+  background-color: var(--gold-soft);
+}
+
+#themeToggle:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.intro {
+  background-color: var(--white);
+  border-left: 5px solid var(--gold);
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 14px var(--shadow);
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  color: var(--blue-deep);
+  line-height: 1.2;
+}
+
+.lead {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.content-section {
+  background-color: var(--white);
+  padding: 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.content-section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  color: var(--blue-mid);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.35rem;
+}
+
+.content-section h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--blue-deep);
+}
+
+.skills-list {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.skills-list li {
+  margin-bottom: 0.35rem;
+}
+
+.skills-list li::marker {
+  color: var(--gold);
+}
+
+.project-card {
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.project-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-link-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+a {
+  color: var(--blue-mid);
+}
+
+a:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+a.project-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.site-footer {
+  background-color: var(--blue-deep);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+.footer-note {
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+
+/* Dark mode — base rule from coursework */
+.dark-mode {
+  background-color: #222;
+  color: white;
+}
+
+body.dark-mode {
+  --blue-light: #1a1a1a;
+  --white: #2d2d2d;
+  --text: #f0f0f0;
+  --text-muted: #c8c8c8;
+  --border: #444;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --blue-deep: #e8e8e8;
+  --blue-mid: #9ec5ff;
+}
+
+body.dark-mode .site-header {
+  background: linear-gradient(135deg, #111, #333);
+  border-bottom-color: var(--gold);
+}
+
+body.dark-mode #themeToggle {
+  background-color: #333;
+  color: var(--white);
+  border-color: var(--gold);
+}
+
+body.dark-mode #themeToggle:hover {
+  background-color: #444;
+}
+
+body.dark-mode h1,
+body.dark-mode .content-section h3 {
+  color: #f5f5f5;
+}
+
+body.dark-mode .content-section h2 {
+  color: #d4e4ff;
+}
+
+body.dark-mode a {
+  color: #9ec5ff;
+}
+
+body.dark-mode .intro {
+  border-left-color: var(--gold);
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #themeToggle {
+    width: 100%;
+  }
+}
