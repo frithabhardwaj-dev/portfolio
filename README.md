@@ -47,6 +47,16 @@ Each project loads its own `style.css` and `script.js` from the same folder usin
    - `PLACEHOLDER: About information` → B-tech cse
    - `PLACEHOLDER: Skill` → real skills (add or remove `<li>` items as needed)
    - `PLACEHOLDER: Project title` / `PLACEHOLDER: Project description` → real project names and descriptions
+
+## 5. Weather checker and chatbot
+
+The portfolio now includes the Lecture 14 weather checker and the Lecture 15 chatbot interface.
+
+1. In `portfolio/config.js`, replace `PASTE_YOUR_OPENWEATHER_API_KEY_HERE` with your own OpenWeather key.
+2. Replace `PASTE_YOUR_GROQ_API_KEY_HERE` with your own Groq key.
+3. Open `portfolio/index.html`, test weather with Jaipur and Delhi, then send a chatbot question.
+
+`portfolio/config.js` is ignored by Git, so your private keys are not pushed to GitHub. Never commit or share it.
 3. Update `portfolio/page-audit.md` so the **True?** column reflects what is now verified.
 4. Do **not** copy contact details from this README or invent email or social links.
 

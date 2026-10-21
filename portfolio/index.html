@@ -44,12 +44,39 @@
         </p>
       </article>
     </section>
+
+    <section id="weather-section" class="weather-section" aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Live Weather Checker</h2>
+      <p>Enter a city to check its current weather.</p>
+      <div class="weather-controls">
+        <label class="sr-only" for="cityInput">City name</label>
+        <input id="cityInput" type="text" placeholder="Enter city (e.g., Jaipur)" autocomplete="address-level2">
+        <button id="weatherButton" type="button">Get Weather</button>
+      </div>
+      <p id="weatherResult" aria-live="polite">Enter a city and click Get Weather.</p>
+    </section>
+
+    <section id="portfolio-chatbot" class="chatbot-section" aria-labelledby="chatbot-heading">
+      <h2 id="chatbot-heading">Ask My Portfolio Chatbot</h2>
+      <p>Ask a question and get a response from the AI.</p>
+      <div id="chatMessages" class="chat-messages" aria-live="polite">
+        <p class="bot-message">Hello! Ask me something about this portfolio.</p>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <label class="sr-only" for="chatInput">Your question</label>
+        <input id="chatInput" type="text" placeholder="Type your question" required>
+        <button id="chatSend" type="submit">Send</button>
+      </form>
+      <p id="chatStatus" aria-live="polite"></p>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Fritha Sharma</p>
   </footer>
 
+  <script src="config.js"></script>
   <script src="script.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>
