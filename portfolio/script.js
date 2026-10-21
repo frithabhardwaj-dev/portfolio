@@ -29,14 +29,14 @@ async function getWeather() {
     weatherResult.textContent = "Please enter a city name.";
     return;
   }
-  if (!window.CONFIG || window.CONFIG.weatherApiKey === "PASTE_YOUR_OPENWEATHER_API_KEY_HERE") {
-    weatherResult.textContent = "Add your OpenWeather API key in config.js first.";
+  if (!window.PORTFOLIO_CONFIG || window.PORTFOLIO_CONFIG.weatherApiKey === "PASTE_YOUR_OPENWEATHER_API_KEY_HERE") {
+    weatherResult.textContent = "Add your OpenWeather API key in local-settings.js first.";
     return;
   }
   weatherResult.textContent = "Loading weather...";
   weatherButton.disabled = true;
   try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${window.CONFIG.weatherApiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${window.PORTFOLIO_CONFIG.weatherApiKey}&units=metric`;
     const response = await fetch(url);
     const data = await response.json();
     if (!response.ok) {

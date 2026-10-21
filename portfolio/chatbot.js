@@ -16,8 +16,8 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const question = input.value.trim();
   if (!question) { statusText.textContent = "Please type a question."; return; }
-  if (!window.CONFIG || window.CONFIG.apiKey === "PASTE_YOUR_GROQ_API_KEY_HERE") {
-    statusText.textContent = "Add your Groq API key in config.js first.";
+  if (!window.PORTFOLIO_CONFIG || window.PORTFOLIO_CONFIG.apiKey === "PASTE_YOUR_GROQ_API_KEY_HERE") {
+    statusText.textContent = "Add your Groq API key in local-settings.js first.";
     return;
   }
   showMessage(question, "user");
@@ -25,11 +25,11 @@ form.addEventListener("submit", async (event) => {
   sendButton.disabled = true;
   statusText.textContent = "Thinking...";
   try {
-    const response = await fetch(`${window.CONFIG.baseUrl}/chat/completions`, {
+    const response = await fetch(`${window.PORTFOLIO_CONFIG.baseUrl}/chat/completions`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${window.CONFIG.apiKey}` },
-      body: JSON.stringify({ model: window.CONFIG.model, temperature: 0.7, messages: [
-        { role: "system", content: "You are a friendly portfolio chatbot. Keep replies under 60 words. If you do not know a personal detail, say so rather than inventing it." },
+      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${window.PORTFOLIO_CONFIG.apiKey}` },
+      body: JSON.stringify({ model: window.PORTFOLIO_CONFIG.model, temperature: 0.7, max_completion_tokens: 240, messages: [
+        { role: "system", content: "You are the friendly portfolio chatbot for Fritha Sharma, a second-year Computer Science and Engineering student at JECRC. Her skills are HTML, CSS, JavaScript and Python. Her projects include this HTML/CSS/JavaScript portfolio, a five-question Code With AI Quiz, a Book Reading List app, beginner Python programs, code-improvement exercises and debugging with Cursor AI. Keep replies under 60 words. If a detail is not in this context, say you do not know rather than inventing it." },
         { role: "user", content: question }
       ] })
     });
